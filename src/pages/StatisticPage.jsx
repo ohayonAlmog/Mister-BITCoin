@@ -27,8 +27,8 @@ export class StatisticPage extends Component {
         )
     }
 
-    onRefreshPage() {
-        window.location.reload(false)
+    onBack = () => {
+        this.props.history.push('/')
     }
 
     render() {
@@ -42,7 +42,7 @@ export class StatisticPage extends Component {
                         )
                     }
                 </ul>
-                <button onClick={this.onRefreshPage}>Back</button>
+                <button onClick={this.onBack}>Back</button>
             </div>
         )
     }

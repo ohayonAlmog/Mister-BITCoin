@@ -6,7 +6,13 @@
     //gap: 2rem;
 
     img {
-        background-color: $clr2;
         border-radius: 50%;
+        background-color: $clr3;
+        filter: grayscale(60%);
+        transition: .3s;
+    }
+
+    img:hover {
+        filter: grayscale(0%);
     }
 }

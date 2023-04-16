@@ -35,7 +35,7 @@
         margin-bottom: 2rem;
     }
 
-    .home-body button {
+    .home-body .link{
         text-decoration: none;
         border: none;
         color: $clr4;
@@ -48,7 +48,7 @@
         transition: 300ms;
     }
 
-    .home-body button:hover {
+    .home-body .link:hover {
         transform: translateY(-8px);
     }
 }

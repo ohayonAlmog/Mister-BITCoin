@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
 import { userService } from '../services/user.service'
 import { bitcoinService } from '../services/bitcoin.service'
 import { logDOM } from '@testing-library/react'
@@ -12,12 +13,10 @@ export class Home extends Component {
     state = {
         user: this.getUser,
         rate: null,
-        active: 'home'
     }
 
     componentDidMount() {
         this.loadRate()
-        this.onChangeToHome()
     }
 
     get getUser() {
@@ -42,28 +41,12 @@ export class Home extends Component {
         }
     }
 
-    onChangeToContacts = () => {
-        const active = 'contactPage'
-        this.setState({ active })
-    }
-
-    onChangeToHome = () => {
-        const active = 'home'
-        this.setState({ active })
-    }
-
-    onChangeToStatistics = () => {
-        const active = 'statistics'
-        this.setState({ active })
-    }
-
     render() {
         const { user, rate, active } = this.state
         if (!user) return <div>Loading...</div>
 
         return (
             <section>
-                {active === 'home' ? (
                 <section className='home'>
                     <div className="header-container">
                         <div className="wrapper">
@@ -75,8 +58,8 @@ export class Home extends Component {
                                         your digital wallet to make trades.
                                     </p>
                                     <p>Coins: {user.coins}<br></br>Rate: {rate}</p>
-                                    <button onClick={this.onChangeToContacts}>Contacts</button>
-                                    <button onClick={this.onChangeToStatistics}>Statistics</button>
+                                    <NavLink className="link" to="/contact">Contacts</NavLink>
+                                    <NavLink className="link" to="/statistics">Statistics</NavLink>
                                 </div>
 
                                 <div className="hero-image">
@@ -87,11 +70,6 @@ export class Home extends Component {
                         </div>
                     </div>
                 </section>
-                ) : active === 'contactPage' ? (
-                    <ContactPage />
-                ) : active === 'statistics' ? (
-                    <StatisticPage />
-                ) : null}
             </section>
         )
     }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 //<article style={contactStyle} className='contact-preview'>
 
 export function ContactPreview({ contact }) {
@@ -7,11 +8,11 @@ export function ContactPreview({ contact }) {
     const contactStyle = `https://robohash.org/${contact._id}`
     return (
         <section className="preview flex column text-center">
-            <img src={contactStyle}/>
+            <Link to={`/contact/${contact._id}`}>
+                <img src={contactStyle}/>
+            </Link>
             <section className="info text-center">
-                <h2>{contact.name}</h2>
-                <h4>{contact.email}</h4>
-                <h4>{contact.phone}</h4>
+                <h2 className="h2">{contact.name}</h2>
             </section>
         </section>
     )

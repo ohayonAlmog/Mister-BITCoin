@@ -21,13 +21,19 @@ export class ContactPage extends Component {
         }
     }
 
+    onBack = () => {
+        this.props.history.push('/')
+    }
+
     render() {
         const { contacts } = this.state
         if (!contacts) return <div>Loading...</div>
         return (
-            <section className='list-container'>
+            <section className='list-container text-center'>
                 <ContactList contacts={contacts}/>
+                <button onClick={this.onBack}>Back</button>
             </section>
+
         )
     }
 }

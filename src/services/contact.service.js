@@ -140,13 +140,21 @@ function sort(arr) {
 }
 
 function getContacts(filterBy = null) {
-    return new Promise((resolve, reject) => {
+    /*return new Promise((resolve, reject) => {
         var contactsToReturn = contacts;
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
         }
         resolve(sort(contactsToReturn))
-    })
+    })*/
+    let contactsToReturn = contacts;
+    if (filterBy) {
+        var { name, email, phone } = filterBy
+        contactsToReturn = contacts.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase()) 
+            && contact.phone.toLowerCase().includes(phone.toLowerCase()) 
+            && contact.email.toLowerCase().includes(email.toLowerCase()))
+    }
+    return Promise.resolve([...contactsToReturn]);
 }
 
 function getContactById(id) {

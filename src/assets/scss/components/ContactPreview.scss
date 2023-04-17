@@ -5,6 +5,19 @@
     width: 230px;
     //gap: 2rem;
 
+    span {
+        margin-right: 8vw;
+        visibility: hidden;
+    }
+
+    &:hover {
+
+        span {
+            visibility: visible;
+            cursor: pointer;
+        }
+    }
+
     img {
         border-radius: 50%;
         background-color: $clr3;

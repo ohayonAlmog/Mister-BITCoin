@@ -42,7 +42,7 @@ export class Home extends Component {
     }
 
     render() {
-        const { user, rate, active } = this.state
+        const { user, rate } = this.state
         if (!user) return <div>Loading...</div>
 
         return (

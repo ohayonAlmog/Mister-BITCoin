@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { contactService } from '../services/contact.service'
 import { Link } from 'react-router-dom'
+import { TransferFund } from '../components/TransferFund'
+import { MovesList } from '../components/MovesList'
 
 export class ContactDetails extends Component {
 
@@ -42,6 +44,8 @@ export class ContactDetails extends Component {
                     </section>
                     
                 </div>
+                <TransferFund contact={contact}/>
+                <MovesList from={'details'} contact={contact}/>
                 <button onClick={this.onBack}>Back</button>
             </section>
 

@@ -26,18 +26,18 @@ export class ContactFilter extends Component {
         const { name, email, phone } = filterBy
 
         return (
-            <form className='robot-filter'>
-                <section>
-                    <label htmlFor="name">Name</label>
-                    <input onChange={this.handleChange} value={name} type="text" name="name" id="name" />
+            <form className='contact-filter flex auto-center space-around'>
+                <section className="form__group field flex">
+                    <input onChange={this.handleChange} value={name} type="text" placeholder="Name" name="name" id="name" className="form__field"/>
+                    <label htmlFor="name" className="form__label">Name</label>
                 </section>
-                <section>
-                    <label htmlFor="email">Email</label>
-                    <input onChange={this.handleChange} value={email} type="text" name="email" id="email" />
+                <section className="form__group field flex">
+                    <input onChange={this.handleChange} value={email} type="text" placeholder="Email" name="email" id="email" className="form__field"/>
+                    <label htmlFor="email" className="form__label">Email</label>
                 </section>
-                <section>
-                    <label htmlFor="phone">Phone</label>
-                    <input onChange={this.handleChange} value={phone} type="text" name="phone" id="phone" />
+                <section className="form__group field flex">
+                    <input onChange={this.handleChange} value={phone} type="text" placeholder="Phone" name="phone" id="phone" className="form__field"/>
+                    <label htmlFor="phone" className="form__label">Phone</label>
                 </section>
             </form>
         )

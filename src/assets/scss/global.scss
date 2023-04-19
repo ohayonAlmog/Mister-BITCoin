@@ -18,10 +18,17 @@
 @import "pages/ContactPage";
 @import "pages/StatisticPage";
 @import "pages/ContactDetails";
+@import "pages/SignIn";
 
 // Components
 @import "components/ContactList";
 @import "components/ContactPreview";
+@import "components/TransferFund";
+@import "components/MovesList";
+@import "components/MovesPreview";
+@import "components/ContactFilter";
+@import "components/Chart";
+//@import "components/TestSign";
 
 // App
 @import "../../App";

@@ -5,6 +5,7 @@ import { bitcoinService } from '../services/bitcoin.service'
 import { logDOM } from '@testing-library/react'
 import { ContactPage } from './ContactPage'
 import { StatisticPage } from './StatisticPage'
+import { MovesList } from '../components/MovesList';
 
 import bitcoin from '../assets/imgs/mainBitcoin.png'
 
@@ -14,6 +15,7 @@ export class Home extends Component {
         user: this.getUser,
         rate: null,
     }
+
 
     componentDidMount() {
         this.loadRate()
@@ -42,7 +44,7 @@ export class Home extends Component {
     }
 
     render() {
-        const { user, rate } = this.state
+        const { user, rate, showLogin } = this.state
         if (!user) return <div>Loading...</div>
 
         return (
@@ -60,6 +62,10 @@ export class Home extends Component {
                                     <p>Coins: {user.coins}<br></br>Rate: {rate}</p>
                                     <NavLink className="link" to="/contact">Contacts</NavLink>
                                     <NavLink className="link" to="/statistics">Statistics</NavLink>
+                                </div>
+
+                                <div>
+                                    <MovesList from={'home'} contact={null}/>
                                 </div>
 
                                 <div className="hero-image">

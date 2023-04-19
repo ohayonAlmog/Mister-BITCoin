@@ -35,7 +35,7 @@ export class StatisticPage extends Component {
         const colors = ['red', 'green']
         return (
             <div className="statistic text-center">
-                <ul>
+                <ul className="clean-list">
                     {
                         this.state.chartDetails.map((chart, idx) =>
                             <li className="statistic-chart" key={idx}>{this.renderChart(chart, colors[idx])}</li>

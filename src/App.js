@@ -1,16 +1,18 @@
 //import logo from './img/logo.svg';
 //import { ReactComponent as Logo } from './img/logo.svg';
-import { NavLink, Route, HashRouter as Router, Switch } from 'react-router-dom';
+import { Link, NavLink, Route, HashRouter as Router, Switch } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ContactPage } from './pages/ContactPage';
 import { StatisticPage } from './pages/StatisticPage';
 import { ContactDetails } from './pages/ContactDetails';
+import { SignIn } from './pages/SignIn';
 
 import search from './assets/imgs/search-icon.svg';
 
 import './assets/scss/global.scss';
 
 function App() {
+
     return (
         <Router>
             <section className="main-app">
@@ -42,6 +44,10 @@ function App() {
                                 </li>
 
                                 <li>
+                                    <NavLink exact to="/login">Login</NavLink>
+                                </li>
+
+                                <li>
                                     <a className="nav-btn-container" href="#">
                                         <img className="search-btn" src={search} />
                                     </a>
@@ -56,6 +62,7 @@ function App() {
                         <Route path="/contact/:id" component={ContactDetails}/>
                         <Route path="/contact" component={ContactPage}/>
                         <Route path="/statistics" component={StatisticPage}/>
+                        <Route path="/login" component={SignIn}/>
                         <Route path="/" component={Home}/>  
                     </Switch>
                 </main>
